@@ -1,0 +1,999 @@
+# =============================================================================
+# Exchange Analysis — Source Inventory (machine-readable)
+# =============================================================================
+#
+# This file is the source of truth for every primary source we reference. The
+# human-readable docs/sources/INVENTORY.md is auto-generated from this file by
+# tools/gen_inventory.py.
+#
+# Schema:
+#   id            — stable, hyphen-delimited; cited in topic frontmatter `sources:`
+#   title         — display title (the source's own title or our short label)
+#   kind          — tour-page | rulebook | enforcement-rule | notice | press-release
+#   publisher     — issuing body (KRX, FSC, FSS, ...)
+#   url           — fetched URL
+#   language      — en | ko | both
+#   authoritative — true only for the original-language legal text
+#   fetched       — ISO date we archived this source
+#   effective     — ISO date the source declares as effective (null if not stated)
+#   archive       — filename in docs/sources/
+#   markets       — [KOSPI], [KOSDAQ], or [KOSPI, KOSDAQ]
+#   topics        — controlled vocabulary; see TOPIC TAGS below
+#   parent        — id of the canonical original-language version (for translations)
+#   notes         — brief disambiguator
+#
+# TOPIC TAGS (controlled vocabulary):
+#   Primary (mapped to docs/index.yaml entries):
+#     market-hours, auctions, price-ranges, order-types, trading-rules,
+#     amendments, volatility-interruption, circuit-breakers, short-selling
+#   Secondary (for "Other Topics"):
+#     block-trade, off-hours, liquidity-provider, program-trading,
+#     treasury-stock, new-listings, liquidation-issues, substitute-securities,
+#     corporate-actions, short-term-volatility, market-data, quotation-rules,
+#     tick-size, base-price, lot-size, matching, member-firms, sessions,
+#     trading-halts
+#
+# When adding a source: assign a new ID, fill every required field, then run
+# `python tools/gen_inventory.py` to regenerate INVENTORY.md.
+# =============================================================================
+
+version: 1
+
+sources:
+
+  # --- KOSPI: Basic Facts about Trading System (section 0602010201, T1-T7) ---
+
+  - id: KRX-TOUR-KOSPI-BASIC-T1
+    title: "General Procedures of Trading"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t1_2026-04-30.html
+    markets: [KOSPI]
+    topics: [market-hours, sessions, member-firms]
+    parent: null
+    notes: "Section: Basic Facts about Trading System, tab 1."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T2
+    title: "Limit Orders / Order types"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t2_2026-04-30.html
+    markets: [KOSPI]
+    topics: [order-types]
+    parent: null
+    notes: "Tab 2 — order type taxonomy."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T3
+    title: "What is a quotation?"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t3_2026-04-30.html
+    markets: [KOSPI]
+    topics: [quotation-rules, order-types]
+    parent: null
+    notes: "Tab 3 — quotation concept."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T4
+    title: "Trading Unit"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t4_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules, lot-size]
+    parent: null
+    notes: "Tab 4 — trading lot / minimum unit."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T5
+    title: "Daily Price Limits"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t5_2026-04-30.html
+    markets: [KOSPI]
+    topics: [price-ranges]
+    parent: null
+    notes: "Tab 5 — daily price limit (±%)."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T6
+    title: "Base Price"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t6_2026-04-30.html
+    markets: [KOSPI]
+    topics: [price-ranges, base-price, tick-size]
+    parent: null
+    notes: "Tab 6 — base-price determination and tick-size schedule."
+
+  - id: KRX-TOUR-KOSPI-BASIC-T7
+    title: "Special Quotations"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010201/GLB0602010201T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-basic-t7_2026-04-30.html
+    markets: [KOSPI]
+    topics: [quotation-rules]
+    parent: null
+    notes: "Tab 7 — special quotation cases."
+
+  # --- KOSPI: Method of Trading (section 0602010202, T1-T8) ---
+
+  - id: KRX-TOUR-KOSPI-METHOD-T1
+    title: "Method of trading for periodic call auction"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t1_2026-04-30.html
+    markets: [KOSPI]
+    topics: [auctions]
+    parent: null
+    notes: "Method-of-Trading tab 1 — call-auction matching."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T2
+    title: "Quantity allocation for periodic call auction at upper/lower price limit"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t2_2026-04-30.html
+    markets: [KOSPI]
+    topics: [auctions, price-ranges]
+    parent: null
+    notes: "Method tab 2 — allocation when opening price hits limit."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T3
+    title: "Execution Method for Continuous Trading"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t3_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules, matching]
+    parent: null
+    notes: "Method tab 3 — continuous-trading matching algorithm."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T4
+    title: "Execution Method of Market Orders at Single Price Auctions"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t4_2026-04-30.html
+    markets: [KOSPI]
+    topics: [auctions, order-types]
+    parent: null
+    notes: "Method tab 4 — market orders in call auctions."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T5
+    title: "Execution Method of Market Order at Continuous Trading"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t5_2026-04-30.html
+    markets: [KOSPI]
+    topics: [order-types, trading-rules, matching]
+    parent: null
+    notes: "Method tab 5 — market orders in continuous trading."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T6
+    title: "Limit Orders at Daily Price Limits vs Market Orders"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t6_2026-04-30.html
+    markets: [KOSPI]
+    topics: [order-types, price-ranges]
+    parent: null
+    notes: "Method tab 6 — execution differences at daily price limits."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T7
+    title: "How to trade Warrant and Right"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t7_2026-04-30.html
+    markets: [KOSPI]
+    topics: [corporate-actions]
+    parent: null
+    notes: "Method tab 7 — warrants and rights (marginal scope)."
+
+  - id: KRX-TOUR-KOSPI-METHOD-T8
+    title: "Midpoint Order Matching Method"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010202/GLB0602010202T8.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-method-t8_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules, matching, order-types]
+    parent: null
+    notes: "Method tab 8 — midpoint matching."
+
+  # --- KOSPI: Exceptions to Trade Execution (section 0602010203, T1-T6) ---
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T1
+    title: "Off-hours Closing Price Trade"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t1_2026-04-30.html
+    markets: [KOSPI]
+    topics: [off-hours, sessions]
+    parent: null
+    notes: "Exceptions tab 1."
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T2
+    title: "Off-hours Block Trade"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t2_2026-04-30.html
+    markets: [KOSPI]
+    topics: [block-trade, off-hours]
+    parent: null
+    notes: "Exceptions tab 2."
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T3
+    title: "Regular Session Block/Basket Trade"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t3_2026-04-30.html
+    markets: [KOSPI]
+    topics: [block-trade]
+    parent: null
+    notes: "Exceptions tab 3."
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T4
+    title: "Auction-based Block Trade (A-Blox)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t4_2026-04-30.html
+    markets: [KOSPI]
+    topics: [block-trade, auctions]
+    parent: null
+    notes: "Exceptions tab 4 — A-Blox dark-pool-style auction."
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T5
+    title: "Trading of Treasury Stocks by Listed Corporations"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t5_2026-04-30.html
+    markets: [KOSPI]
+    topics: [treasury-stock]
+    parent: null
+    notes: "Exceptions tab 5."
+
+  - id: KRX-TOUR-KOSPI-EXCEPT-T6
+    title: "Trading of Liquidation Trading Issues"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010203/GLB0602010203T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-except-t6_2026-04-30.html
+    markets: [KOSPI]
+    topics: [liquidation-issues]
+    parent: null
+    notes: "Exceptions tab 6."
+
+  # --- KOSPI: Market Operation and Management (section 0602010204, T1-T9) ---
+
+  - id: KRX-TOUR-KOSPI-OPS-T1
+    title: "Ex-dividends"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t1_2026-04-30.html
+    markets: [KOSPI]
+    topics: [corporate-actions]
+    parent: null
+    notes: "Ops tab 1."
+
+  - id: KRX-TOUR-KOSPI-OPS-T2
+    title: "Circuit Breakers"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t2_2026-04-30.html
+    markets: [KOSPI]
+    topics: [circuit-breakers]
+    parent: null
+    notes: "Ops tab 2 — index-level CB tiers."
+
+  - id: KRX-TOUR-KOSPI-OPS-T3
+    title: "Suspension of individual issues & resumption"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t3_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-halts]
+    parent: null
+    notes: "Ops tab 3 — symbol-level suspension."
+
+  - id: KRX-TOUR-KOSPI-OPS-T4
+    title: "Program trading"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t4_2026-04-30.html
+    markets: [KOSPI]
+    topics: [program-trading]
+    parent: null
+    notes: "Ops tab 4."
+
+  - id: KRX-TOUR-KOSPI-OPS-T5
+    title: "Concept of Short Selling"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t5_2026-04-30.html
+    markets: [KOSPI]
+    topics: [short-selling]
+    parent: null
+    notes: "Ops tab 5 — short-selling overview."
+
+  - id: KRX-TOUR-KOSPI-OPS-T6
+    title: "Publication of Quotation Information"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t6_2026-04-30.html
+    markets: [KOSPI]
+    topics: [market-data, quotation-rules]
+    parent: null
+    notes: "Ops tab 6 — order book disclosure."
+
+  - id: KRX-TOUR-KOSPI-OPS-T7
+    title: "Liquidity Provider (LP) system"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t7_2026-04-30.html
+    markets: [KOSPI]
+    topics: [liquidity-provider]
+    parent: null
+    notes: "Ops tab 7 — heading reads 'Concept'."
+
+  - id: KRX-TOUR-KOSPI-OPS-T8
+    title: "Short-term Volatility Measures (overheat)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T8.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t8_2026-04-30.html
+    markets: [KOSPI]
+    topics: [short-term-volatility]
+    parent: null
+    notes: "Ops tab 8 — temporary-overheat measures (since Nov 2012)."
+
+  - id: KRX-TOUR-KOSPI-OPS-T9
+    title: "Volatility Interruption (VI)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010204/GLB0602010204T9.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-ops-t9_2026-04-30.html
+    markets: [KOSPI]
+    topics: [volatility-interruption]
+    parent: null
+    notes: "Ops tab 9 — heading 'Main contents'; covers VI applicability."
+
+  # --- KOSPI: Trust System (section 0602010205, T1-T5) ---
+
+  - id: KRX-TOUR-KOSPI-TRUST-T1
+    title: "Method of consigning order"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010205/GLB0602010205T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-trust-t1_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules, member-firms]
+    parent: null
+    notes: "Trust tab 1."
+
+  - id: KRX-TOUR-KOSPI-TRUST-T2
+    title: "Discretionary trading without investor's approval"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010205/GLB0602010205T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-trust-t2_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules]
+    parent: null
+    notes: "Trust tab 2."
+
+  - id: KRX-TOUR-KOSPI-TRUST-T3
+    title: "Consignment guarantee money"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010205/GLB0602010205T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-trust-t3_2026-04-30.html
+    markets: [KOSPI]
+    topics: [trading-rules]
+    parent: null
+    notes: "Trust tab 3 — broker margin/deposit."
+
+  - id: KRX-TOUR-KOSPI-TRUST-T4
+    title: "Appointment of substitute securities"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010205/GLB0602010205T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-trust-t4_2026-04-30.html
+    markets: [KOSPI]
+    topics: [substitute-securities]
+    parent: null
+    notes: "Trust tab 4."
+
+  - id: KRX-TOUR-KOSPI-TRUST-T5
+    title: "Calculation and applicable time of substitute price"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602010205/GLB0602010205T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kospi-trust-t5_2026-04-30.html
+    markets: [KOSPI]
+    topics: [substitute-securities]
+    parent: null
+    notes: "Trust tab 5."
+
+  # --- KOSDAQ: Basic Facts about Trading System (section 0602020201, inline) ---
+
+  - id: KRX-TOUR-KOSDAQ-BASIC
+    title: "KOSDAQ — Basic Facts about Trading System"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020201/GLB0602020201.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-basic_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [market-hours, tick-size, lot-size, price-ranges, trading-rules]
+    parent: null
+    notes: "Inline content (no T-tabs); single page covering tick-size table, trading lot, market hours, and overview of trading mechanics."
+
+  # --- KOSDAQ: Method of Trading (section 0602020202, T1-T7) ---
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T1
+    title: "Quotation quantity limit (1% rule)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t1_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [order-types, quotation-rules]
+    parent: null
+    notes: "Method tab 1 — heading 'Details'; very short fragment on max quote size."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T2
+    title: "Base Price"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t2_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [price-ranges, base-price]
+    parent: null
+    notes: "Method tab 2."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T3
+    title: "Calculation of Base Prices"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t3_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [base-price]
+    parent: null
+    notes: "Method tab 3 — base-price formula."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T4
+    title: "Trading of newly listed stocks"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t4_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [new-listings]
+    parent: null
+    notes: "Method tab 4 — IPO-day rules."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T5
+    title: "Limit Orders / Order types"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t5_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [order-types]
+    parent: null
+    notes: "Method tab 5."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T6
+    title: "Periodic call auction"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t6_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [auctions]
+    parent: null
+    notes: "Method tab 6."
+
+  - id: KRX-TOUR-KOSDAQ-METHOD-T7
+    title: "Liquidity Provider (LP)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020202/GLB0602020202T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-method-t7_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [liquidity-provider]
+    parent: null
+    notes: "Method tab 7."
+
+  # --- KOSDAQ: Exceptions to Trade Execution (section 0602020203, T1-T8) ---
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T1
+    title: "Off-hours Closing Price Trade"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t1_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [off-hours, sessions]
+    parent: null
+    notes: "Exceptions tab 1 — heading 'Importance'."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T2
+    title: "Off-hours Single Price Trading"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t2_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [off-hours, auctions]
+    parent: null
+    notes: "Exceptions tab 2 — periodic 10-min call auction within ±10% of close."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T3
+    title: "Off-hours Block Trade"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t3_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [block-trade, off-hours]
+    parent: null
+    notes: "Exceptions tab 3 — heading 'Significance'."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T4
+    title: "Auction-based Block Trade (A-Blox)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t4_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [block-trade, auctions]
+    parent: null
+    notes: "Exceptions tab 4 — VWAP-priced continuous matching."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T5
+    title: "Quotation disclosure during single-price auction"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t5_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [auctions, market-data, quotation-rules]
+    parent: null
+    notes: "Exceptions tab 5 — what's published during call-auction order entry."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T6
+    title: "Treasury stock acquisition workflow"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t6_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [treasury-stock]
+    parent: null
+    notes: "Exceptions tab 6 — heading 'Work Flow'."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T7
+    title: "Limit to short sale"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t7_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [short-selling]
+    parent: null
+    notes: "Exceptions tab 7 — short-sale price/uptick rules."
+
+  - id: KRX-TOUR-KOSDAQ-EXCEPT-T8
+    title: "Trading of Liquidation Issues"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020203/GLB0602020203T8.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-except-t8_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [liquidation-issues]
+    parent: null
+    notes: "Exceptions tab 8."
+
+  # --- KOSDAQ: Market Operation and Management (section 0602020204, T1-T7) ---
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T1
+    title: "Trading Hours"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T1.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t1_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [market-hours, sessions]
+    parent: null
+    notes: "Ops tab 1."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T2
+    title: "Circuit Breakers"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T2.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t2_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [circuit-breakers]
+    parent: null
+    notes: "Ops tab 2 — index-level CB tiers for KOSDAQ index."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T3
+    title: "Sidecar (program-trading halt)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T3.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t3_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [program-trading]
+    parent: null
+    notes: "Ops tab 3."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T4
+    title: "Program trading disclosure"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T4.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t4_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [program-trading]
+    parent: null
+    notes: "Ops tab 4."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T5
+    title: "VI for preferred/new stocks (price-disparity cooling-off)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T5.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t5_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [volatility-interruption]
+    parent: null
+    notes: "Ops tab 5 — cooling-off for preferred/new-stock price disparity vs comparable issues."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T6
+    title: "Short-term Volatility Measures (overheat)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T6.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t6_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [short-term-volatility]
+    parent: null
+    notes: "Ops tab 6 — heading 'Background'; counterpart of KOSPI OPS-T8."
+
+  - id: KRX-TOUR-KOSDAQ-OPS-T7
+    title: "Volatility Interruption (VI)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020204/GLB0602020204T7.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-ops-t7_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [volatility-interruption]
+    parent: null
+    notes: "Ops tab 7 — heading 'Purpose'; main VI page (2-min cooling-off)."
+
+  # --- KRX Authoritative Rulebooks (Korean originals from rule.krx.co.kr) ---
+  #
+  # Sourced from the KRX Legal Portal (rule.krx.co.kr) via POST to
+  # /out/regulation/regulationViewPop.do with bookid + CSRF. Each archive is the
+  # full HTML rendering of the rulebook as served by the portal's viewer.
+  # Effective dates come from the portal's "최근 제·개정규정" listing.
+
+  - id: KRX-RULE-KOSPI-BR-KO
+    title: "유가증권시장 업무규정 (KOSPI Market Business Regulation)"
+    kind: rulebook
+    publisher: KRX
+    url: https://rule.krx.co.kr/out/regulation/regulationViewPop.do?bookid=210200859
+    language: ko
+    authoritative: true
+    fetched: 2026-04-30
+    effective: 2026-04-28
+    archive: krx-rule-kospi-br_2026-04-30.html
+    markets: [KOSPI]
+    topics: [market-hours, sessions, auctions, price-ranges, order-types, trading-rules, amendments, volatility-interruption, circuit-breakers, short-selling, matching, quotation-rules, base-price, tick-size]
+    parent: null
+    notes: "KRX Legal Portal bookid 210200859. 132 articles. Snapshot via POST /out/regulation/regulationViewPop.do (requires CSRF + session cookie); the served HTML embeds the full Korean rule text. Authoritative legal text — cite this for any normative claim about KOSPI trading rules."
+
+  - id: KRX-RULE-KOSPI-BR-ENFORCE-KO
+    title: "유가증권시장 업무규정 시행세칙 (KOSPI Business Regulation Enforcement Rule)"
+    kind: enforcement-rule
+    publisher: KRX
+    url: https://rule.krx.co.kr/out/regulation/regulationViewPop.do?bookid=210203562
+    language: ko
+    authoritative: true
+    fetched: 2026-04-30
+    effective: 2026-04-28
+    archive: krx-rule-kospi-br-enforce_2026-04-30.html
+    markets: [KOSPI]
+    topics: [auctions, price-ranges, order-types, trading-rules, amendments, volatility-interruption, circuit-breakers, short-selling, matching, quotation-rules, base-price, tick-size]
+    parent: null
+    notes: "KRX Legal Portal bookid 210203562. 151 articles — the most detailed source for implementation specifics (정정범위, 정정방법, etc., for amendments). Authoritative."
+
+  - id: KRX-RULE-KOSDAQ-BR-KO
+    title: "코스닥시장 업무규정 (KOSDAQ Market Business Regulation)"
+    kind: rulebook
+    publisher: KRX
+    url: https://rule.krx.co.kr/out/regulation/regulationViewPop.do?bookid=210164370
+    language: ko
+    authoritative: true
+    fetched: 2026-04-30
+    effective: 2026-04-27
+    archive: krx-rule-kosdaq-br_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [market-hours, sessions, auctions, price-ranges, order-types, trading-rules, amendments, volatility-interruption, circuit-breakers, short-selling, matching, quotation-rules, base-price, tick-size]
+    parent: null
+    notes: "KRX Legal Portal bookid 210164370. 72 articles. Authoritative. **The corresponding Enforcement Rule (시행세칙) is still TBD — see Risks R6 in PROJECT_IMPLEMENTATION.md.**"
+
+  # --- KOSDAQ: Trust System (section 0602020205, inline) ---
+
+  - id: KRX-TOUR-KOSDAQ-TRUST
+    title: "KOSDAQ — Trust System (Substitute Securities)"
+    kind: tour-page
+    publisher: KRX
+    url: https://global.krx.co.kr/contents/GLB/06/0602/0602020205/GLB0602020205.jsp
+    language: en
+    authoritative: false
+    fetched: 2026-04-30
+    effective: null
+    archive: krx-tour-kosdaq-trust_2026-04-30.html
+    markets: [KOSDAQ]
+    topics: [substitute-securities]
+    parent: null
+    notes: "Inline content (no T-tabs); sparser than KOSPI Trust counterpart — first heading is 'Definition of Substitute Securities'."

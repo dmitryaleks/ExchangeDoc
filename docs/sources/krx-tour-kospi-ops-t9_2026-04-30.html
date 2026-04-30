@@ -1,0 +1,219 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+<dl>
+	<dt>Main contents</dt>
+	<dd>
+		<div class="design-title-list2" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+		<dl>
+			<dt>Subject</dt>
+			<dd>
+				<div class="design-box5"><div>
+					<dl>
+						<dd>
+							Stock certificate, DR, ETF, ETN, Beneficiary Certificate (Stock certificate and DR for KOSDAQ market)<br/>
+							<span class="design-note-tin"><span class="hidden-alt">주의</span>
+								As of Oct 18th, 2021, for newly listed stocks and global DRs and transfers from the KONEX to KOSDAQ, VI will not be applied on the day of the IPO(only for the day).<br/>
+								(Yet the VI will still be applied to transfers from the KOSDAQ to KOSPI or from the KOSPI to KOSDAQ)
+							</span>
+
+						</dd>
+					</dl>
+				</div></div>
+			</dd>
+			
+			<dt>Ⅵ-Types</dt>
+			<dd><div class="design-content-list1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+				<ul>
+					<li>Dynamic Volatility Interruption<br>
+						A tool to relieve a temporary volatility caused by supply-demand imbalances or fat-finger error.</li>
+					<li>Static Volatility Interruption<br>
+						A tool to relieve a long-term cumulative price change caused by a specific or various quotations.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('a87ff679a2f3e71d9181a67b7542122c');</script>
+			</dd>
+			
+			<dt>Triggering Requirements</dt>
+			<dd><div class="design-content-list1" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+				<ul>
+					<li>Reference prices
+						<div class="design-table1" id="1679091c5a880faf6fb5e6087eb1b2dc">
+
+						<table summary="Reference prices">
+							<caption>Reference prices</caption>
+							<colgroup>
+								<col style="width: 35%">
+								<col style="width: 65%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">Dynamic Ⅵ</th>
+									<th scope="col">Static Ⅵ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" class="tac">The last execution price</th>
+									<td>The price determined at the last periodic call auction before placing orders.
+										<div class="design-content-list1" id="8f14e45fceea167a5a36dedd4bea2543">
+
+										<ul>
+											<li>Before determining the opening price: Base price of the day (preⅥous day’s closing price)</li>
+											<li>After determining the opening price: A price determined at the last periodic call auction</li>
+										</ul>
+										
+</div>
+<script>$.listTitle('8f14e45fceea167a5a36dedd4bea2543');</script>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+</div>
+<script>
+$.tableFirstChild('1679091c5a880faf6fb5e6087eb1b2dc');
+
+</script>
+					</li>
+					<li>Ⅵ triggering price: Reference Price ± (Reference Price×Ⅵ rate)
+						<div class="design-table1" id="c9f0f895fb98ab9159f51fd0297e236d">
+
+						<table summary="Ⅵ triggering price: Reference Price ± (Reference Price×Ⅵ rate)">
+							<caption>Ⅵ triggering price: Reference Price ± (Reference Price×Ⅵ rate)</caption>
+							<colgroup>
+								<col style="width: 17%" span="2">
+								<col style="width: 16%" span="4">
+							</colgroup>
+							<tbody class="tac">
+								<tr>
+									<th scope="colgroup" colspan="2" rowspan="2">Classification</th>
+									<th scope="colgroup" colspan="3">Dynamic Ⅵ</th>
+									<th scope="colgroup">Static Ⅵ</th>
+								</tr>
+								<tr>
+									<th scope="col">Continuous Auction<br>(09:00∼15:20)</th>
+									<th scope="col">Closing Auction<br>(15:20∼15:30)</th>
+									<th scope="col">Off-hours Single Price Auction<br>(16:00∼18:00)</th>
+									<th scope="col">Regular Session</th>
+								</tr>
+								<tr>
+									<td>KOSPI 200 constituent stocks</td>
+									<td>KOSPI200/100/50, KRX100, Inverse, Bond</td>
+									<td>3%</td>
+									<td>2%</td>
+									<td>3%</td>
+									<td rowspan="2">10%</td>
+								</tr>
+								<tr>
+									<td>General issues in KOSPI market, KOSDAQ issues</td>
+									<td>Leverage, Sector, Foreign index, Commodity, and so on</td>
+									<td>6%</td>
+									<td>4%</td>
+									<td>6%</td>
+								</tr>
+							</tbody>
+						</table>
+						
+</div>
+<script>
+$.tableFirstChild('c9f0f895fb98ab9159f51fd0297e236d');
+
+</script>
+						<p>An exceptional Dynamic Ⅵ rate (1%) is applied to the underlying stocks* of derivatives products during closing auction on the last   trading day of equity-related derivatives products</p>
+						<span class="design-note-tin"><span class="hidden-alt">주의</span>Constituents of KOSPI200, KOSDAQ150, and Sector indices and underlying stocks of single stock futures and options</span>
+
+					</li>
+					<li>There is no limit to the numbers of times Ⅵ can be triggered in a day.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('e4da3b7fbbce2345d7772b0674a318d5');</script>
+			</dd>
+			
+			<dt>Processing Method</dt>
+			<dd><div class="design-content-list1" id="45c48cce2e2d7fbdea1afc51c7c6ad26">
+
+				<ul>
+					<li>When Ⅵ is triggered, the orders are received for 2 minutes for periodic call auction and then executed.<br>
+						(If Ⅵ occurs at the time of continuous auction, the session would be converted to periodic call auction, and for periodic call auction, the time would be extended)</li>
+					<li>Priority principle for price and time is applicable.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('45c48cce2e2d7fbdea1afc51c7c6ad26');</script>
+			</dd>
+			
+			<dt>Applied session</dt>
+			<dd><div class="design-content-list1" id="d3d9446802a44259755d38e6d163e820">
+
+				<ul>
+					<li>Dynamic Ⅵ: continuous auction, closing auction, off-hour periodic call auction</li>
+					<li>Static Ⅵ: continuous auction, periodic call auction at market opening and closing</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('d3d9446802a44259755d38e6d163e820');</script>
+			</dd>
+			
+			<dt>Exceptions</dt>
+			<dd><div class="design-content-list1" id="6512bd43d9caa6e02c990b0a82652dca">
+
+				<ul>
+					<li>Issues scheduled to be delisted, short-term overheated issue</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('6512bd43d9caa6e02c990b0a82652dca');</script>
+			</dd>
+			
+			<dt>Avoidance of overlapping application</dt>
+			<dd>
+				<p>In case where the VIs overlap with other price stabilization facility, only one is applied in principle for the investors’ convenience.</p>
+				<div class="design-content-list1" id="c20ad4d76fe97759aa27a0c99bff6710">
+
+				<ol>
+					<li>Circuit Breakers (CB)<br>
+						At the time of CB triggering, other price stabilization is cancelled
+					</li>
+					<li>Price stabilization facility by issue<br>
+						When a periodic call auction is conducted by a triggered VI, another VI is not applied.
+					</li>
+				</ol>
+				
+</div>
+<script>$.listTitle('c20ad4d76fe97759aa27a0c99bff6710');</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+	</dd>
+</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+	<dl>
+		<dt>Definition</dt>
+		<dd>Circuit Breakers (CB) is a scheme designed to halt all trading in the market in order to provide cooling-off time for investors to analyze the market situation when the KOSDAQ index falls more than a certain level compared to the previous trading session.</dd>
+		
+		<dt>Trading halt by Circuit Breakers</dt>
+		<dd>
+			<div class="design-title-list2" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+			<dl>
+				<dt>Requirement for Circuit Breakers</dt>
+				<dd>
+					<div class="design-content-list1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+					<ul>
+						<li>Phase 1 : All stock trades are halted when the KOSDAQ index declines 8% or more compared to the previous day’s closing value and  lasts for 1 minute.</li>
+						<li>Phase 2 : After the trading halt by phase 1 and resumption thereafter, if KOSDAQ index declines 15% or more than that of previous day and at the same time if the index declines 1% additionally and lasts for 1 minute compared with the index value at which phase 1 was triggered, all trades are halted.</li>
+						<li>Phase 3 : Following the phase 1 and 2 trading halts and resumption thereafter, all trades are halted if the KOSDAQ index  decreases 20% or more than the previous day’s closing value and additional 1% decline occurs and lasts for 1 minute compared with the index where phase 2 was triggered.</li>
+						<li>The implementation of the each phase of Circuit Breakers is limited to one time in one day. Phases 1 and 2 are not triggered during 40 minutes before the market closing whereas phase 3 is triggered during that time period.</li>
+					</ul>
+					
+</div>
+<script>$.listTitle('a87ff679a2f3e71d9181a67b7542122c');</script>
+				</dd>
+				
+				<dt>Effect of Circuit Breakers</dt>
+				<dd>
+					<div class="design-content-list1" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+					<ul>
+						<li>During phase 1 and 2 Circuit Breakers, all trades and all orders in KOSDAQ market are halted except the cancellation orders</li>
+						<li>All orders (excluding cancellation orders) and trades in KOSDAQ150 index futures, single stock futures market are also halted.</li>
+						<li>When phase 3 is triggered, all trades in KOSDAQ market are halted (The market is closed).</li>
+					</ul>
+					
+</div>
+<script>$.listTitle('e4da3b7fbbce2345d7772b0674a318d5');</script>
+				</dd>
+				
+				<dt>Resumption of trading</dt>
+				<dd>
+					<div class="design-content-list1" id="1679091c5a880faf6fb5e6087eb1b2dc">
+
+					<ul>
+						<li>Trades are resumed 20 minutes after the halt in case of phase 1 and 2.</li>
+						<li>When trades are resumed, the first price is determined by the single price auction with bid and offer orders collected for 10 minutes from the time that trades are resumed.</li>
+						<li>In case of phase 3, no trade can be resumed on the day.</li>
+					</ul>
+					
+</div>
+<script>$.listTitle('1679091c5a880faf6fb5e6087eb1b2dc');</script>
+				</dd>
+			</dl>
+			
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+		</dd>
+	</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+</body>
+</html>

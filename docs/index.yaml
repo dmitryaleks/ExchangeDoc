@@ -1,0 +1,205 @@
+# =============================================================================
+# Exchange Analysis — Documentation Assembly Index
+# =============================================================================
+#
+# This file is the single source of truth for the order, grouping, and metadata
+# of every Markdown file in `docs/`. The HTML site generator (Phase 5) reads
+# this file to build the sidebar, breadcrumbs, and per-page metadata.
+#
+# Schema:
+#   version:  integer, increment when the schema itself changes
+#   project:  high-level project metadata (rendered into the site header)
+#   sections: ordered list of topic groups; each section has ordered entries
+#
+# Per-entry fields:
+#   title          — display title (string, required)
+#   file           — path relative to docs/ (string, required, must exist)
+#   markets        — list of market codes covered: [KOSPI], [KOSDAQ], or [KOSPI, KOSDAQ]
+#   tags           — free-form list of search tags (lowercase, kebab-case)
+#   last_reviewed  — ISO date YYYY-MM-DD, or null until first written
+#   sources        — list of source-inventory IDs (see docs/sources/INVENTORY.md)
+#                    null/empty until Phase 1 populates the inventory
+#
+# Conventions:
+#   - One entry per (topic × market) pair. Shared write-ups live in docs/common/
+#     and are referenced with markets: [KOSPI, KOSDAQ].
+#   - File paths use forward slashes regardless of host OS.
+#   - Keep section and entry order = intended reading order on the site.
+#
+# =============================================================================
+
+version: 1
+
+project:
+  name: "Exchange Analysis — KOSPI & KOSDAQ Microstructure"
+  short_name: "KR Exchange Analysis"
+  scope:
+    in:
+      - KOSPI Market
+      - KOSDAQ Market
+    out:
+      - Nextrade
+      - ATS / PTS
+      - Derivatives markets
+  themes:
+    - pastel-light
+    - pastel-dark
+  default_theme: pastel-light
+
+sections:
+
+  - id: overview
+    title: Overview
+    entries:
+      - title: Introduction
+        file: common/introduction.md
+        markets: [KOSPI, KOSDAQ]
+        tags: [overview, intro]
+        last_reviewed: null
+        sources: []
+      - title: KOSPI vs KOSDAQ — comparison
+        file: common/comparison.md
+        markets: [KOSPI, KOSDAQ]
+        tags: [comparison, cross-market]
+        last_reviewed: null
+        sources: []
+
+  - id: sessions-and-auctions
+    title: Sessions & Auctions
+    entries:
+      - title: Market hours (KOSPI)
+        file: kospi/market_hours.md
+        markets: [KOSPI]
+        tags: [hours, sessions, holidays]
+        last_reviewed: null
+        sources: []
+      - title: Market hours (KOSDAQ)
+        file: kosdaq/market_hours.md
+        markets: [KOSDAQ]
+        tags: [hours, sessions, holidays]
+        last_reviewed: null
+        sources: []
+      - title: Auctions (KOSPI)
+        file: kospi/auctions.md
+        markets: [KOSPI]
+        tags: [auction, opening, closing, call-auction, random-end]
+        last_reviewed: null
+        sources: []
+      - title: Auctions (KOSDAQ)
+        file: kosdaq/auctions.md
+        markets: [KOSDAQ]
+        tags: [auction, opening, closing, call-auction, random-end]
+        last_reviewed: null
+        sources: []
+
+  - id: prices-and-orders
+    title: Prices & Orders
+    entries:
+      - title: Price ranges & tick sizes (KOSPI)
+        file: kospi/price_ranges.md
+        markets: [KOSPI]
+        tags: [price-limit, tick-size, base-price]
+        last_reviewed: null
+        sources: []
+      - title: Price ranges & tick sizes (KOSDAQ)
+        file: kosdaq/price_ranges.md
+        markets: [KOSDAQ]
+        tags: [price-limit, tick-size, base-price]
+        last_reviewed: null
+        sources: []
+      - title: Order types (KOSPI)
+        file: kospi/order_types.md
+        markets: [KOSPI]
+        tags: [orders, limit, market, ioc, fok, moo, moc]
+        last_reviewed: null
+        sources: []
+      - title: Order types (KOSDAQ)
+        file: kosdaq/order_types.md
+        markets: [KOSDAQ]
+        tags: [orders, limit, market, ioc, fok, moo, moc]
+        last_reviewed: null
+        sources: []
+      - title: Trading rules & matching (KOSPI)
+        file: kospi/trading_rules.md
+        markets: [KOSPI]
+        tags: [matching, priority, lot-size, self-match]
+        last_reviewed: null
+        sources: []
+      - title: Trading rules & matching (KOSDAQ)
+        file: kosdaq/trading_rules.md
+        markets: [KOSDAQ]
+        tags: [matching, priority, lot-size, self-match]
+        last_reviewed: null
+        sources: []
+      - title: Order amendments (KOSPI)
+        file: kospi/amendments.md
+        markets: [KOSPI]
+        tags: [amend, modify, price-amend, qty-amend, priority]
+        last_reviewed: null
+        sources: []
+      - title: Order amendments (KOSDAQ)
+        file: kosdaq/amendments.md
+        markets: [KOSDAQ]
+        tags: [amend, modify, price-amend, qty-amend, priority]
+        last_reviewed: null
+        sources: []
+
+  - id: safeguards
+    title: Volatility Safeguards
+    entries:
+      - title: Volatility Interruption (KOSPI)
+        file: kospi/volatility_interruption.md
+        markets: [KOSPI]
+        tags: [vi, static-vi, dynamic-vi, cool-off]
+        last_reviewed: null
+        sources: []
+      - title: Volatility Interruption (KOSDAQ)
+        file: kosdaq/volatility_interruption.md
+        markets: [KOSDAQ]
+        tags: [vi, static-vi, dynamic-vi, cool-off]
+        last_reviewed: null
+        sources: []
+      - title: Circuit Breakers (KOSPI)
+        file: kospi/circuit_breakers.md
+        markets: [KOSPI]
+        tags: [cb, circuit-breaker, halt, index-level]
+        last_reviewed: null
+        sources: []
+      - title: Circuit Breakers (KOSDAQ)
+        file: kosdaq/circuit_breakers.md
+        markets: [KOSDAQ]
+        tags: [cb, circuit-breaker, halt, index-level]
+        last_reviewed: null
+        sources: []
+
+  - id: short-selling
+    title: Short Selling
+    entries:
+      - title: Short selling rules (KOSPI)
+        file: kospi/short_selling.md
+        markets: [KOSPI]
+        tags: [short-sale, uptick, eligibility, designated-list]
+        last_reviewed: null
+        sources: []
+      - title: Short selling rules (KOSDAQ)
+        file: kosdaq/short_selling.md
+        markets: [KOSDAQ]
+        tags: [short-sale, uptick, eligibility, designated-list]
+        last_reviewed: null
+        sources: []
+
+  - id: other
+    title: Other Topics
+    entries:
+      - title: Other topics (KOSPI)
+        file: kospi/other_topics.md
+        markets: [KOSPI]
+        tags: [block-trade, after-hours, error-trade, misc]
+        last_reviewed: null
+        sources: []
+      - title: Other topics (KOSDAQ)
+        file: kosdaq/other_topics.md
+        markets: [KOSDAQ]
+        tags: [block-trade, after-hours, error-trade, misc]
+        last_reviewed: null
+        sources: []

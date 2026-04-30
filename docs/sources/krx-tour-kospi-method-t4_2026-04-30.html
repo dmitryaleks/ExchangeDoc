@@ -1,0 +1,439 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+<dl>
+	<dt>Execution Method of Market Orders at Single Price Auctions</dt>
+	<dd>
+		<p>Execution of market orders at single price auctions can be classified into <span class="design-text-underline">two different cases</span>: a case where there are market orders only and another with limit orders.</p><br>
+		<p>In <span class="design-text-underline">the</span> case where there are ask market orders and bid market orders without a limit order, the execution price will be the last traded price. However, if the total order quantities in both sides are different, the execution price reflects the market demand of the side with larger quantity. Therefore, the execution price will be one tick higher than the last traded price if the bid quantity is larger and one tick lower than the last traded price if the ask quantity is larger. Still, in this case, the execution price cannot exceed the daily price limits.</p><br>
+		<p>In <span class="design-text-underline">the</span> case where there are market orders together with limit orders, which is the <span class="design-text-underline">most common</span> case, a bid(ask) market order is deemed to be the highest(lowest) of a) one tick higher(lower) than the highest(lowest) bid(ask) limit order, b) highest(lowest) ask(bid) limit order, and, c) last traded price.</p>
+	</dd>
+	
+	<dt>Examples of Execution of Market Orders at Single Price Auctions</dt>
+	<dd>
+		<p>Followings are some examples of execution and deemed prices of a market order with limit orders. (For the purpose of explanation, tick sizes are assumed to be KRW 100 only.) W 100 only.)</p>
+		<div class="design-title-list2" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+		<dl>
+			<dt>Example 1. One tick higher than the bid limit order</dt>
+			<dd>
+				<div class="design-table1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+				<table summary="example 1">
+					<caption>example 1</caption>
+					<colgroup>
+						<col style="width: 20%" span="3">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td rowspan="7" class="tal">
+								<div class="design-content-list1" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+								<ul>
+									<li>Deemed Price : 10,700<br>
+										1 tick higher than the best bid &gt; Counterparty's price &gt; Last traded price
+									</li>
+									<li>Execution Price : 10,700 (matched price)</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('e4da3b7fbbce2345d7772b0674a318d5');</script>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,800</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,700</td>
+							<td>200(deemed price)</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,500</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,400</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,300</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('a87ff679a2f3e71d9181a67b7542122c');
+
+</script>
+			</dd>
+			
+			<dt>Example 2. Highest of the counterparty's limit orders</dt>
+			<dd>
+				<div class="design-table1" id="1679091c5a880faf6fb5e6087eb1b2dc">
+
+				<table summary="example 2">
+					<colgroup>
+						<col style="width: 20%" span="3">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td rowspan="7" class="tal">
+								<div class="design-content-list1" id="8f14e45fceea167a5a36dedd4bea2543">
+
+								<ul>
+									<li>Deemed Price: 10,700<br>
+										counterparty's price &gt; 1 tick higher than the best bid &gt; Last Traded Price</li>
+									<li>Execution Price : 10,500 (matched price)</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('8f14e45fceea167a5a36dedd4bea2543');</script>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,800</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,700</td>
+							<td>200(Deemed Price)</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,500</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,400</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,300</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('1679091c5a880faf6fb5e6087eb1b2dc');
+
+</script>
+			</dd>
+			
+			<dt>Example 3. Last traded price</dt>
+			<dd>
+				<div class="design-table1" id="c9f0f895fb98ab9159f51fd0297e236d">
+
+				<table summary="example 3">
+					<caption>example 3</caption>
+					<colgroup>
+						<col style="width: 20%" span="3">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td rowspan="7" class="tal">
+								<div class="design-content-list1" id="45c48cce2e2d7fbdea1afc51c7c6ad26">
+
+								<ul>
+									<li>Deemed Price : 10,700<br>
+										Last Traded Price &gt; counterparty's price &gt; 1 tick higher than the best bid
+									</li>
+									<li>Execution Price : 10,700<br>
+										(Of the matched prices, the last traded price)
+									</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('45c48cce2e2d7fbdea1afc51c7c6ad26');</script>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,800</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,700</td>
+							<td>200(deemed price)</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,400</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,300</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('c9f0f895fb98ab9159f51fd0297e236d');
+
+</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+		
+		<p>In a case where there are only market orders at both sides, a market order has a deemed price and is matched as in this example. (For the purpose of explanation, tick sizes are assumed to be KRW 100 only.)</p>
+		
+		<div class="design-title-list2" id="d3d9446802a44259755d38e6d163e820">
+
+		<dl>
+			<dt>Example 1. Market orders with same quantities</dt>
+			<dd>
+				<div class="design-table1" id="6512bd43d9caa6e02c990b0a82652dca">
+
+				<table summary="example 4">
+					<caption>example 4</caption>
+					<colgroup>
+						<col style="width: 20%" span="3">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>200</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td rowspan="7" class="tal">
+								<div class="design-content-list1" id="c20ad4d76fe97759aa27a0c99bff6710">
+
+								<ul>
+									<li>Deemed Price : 10,700<br>
+										Last traded price where the both sides have market orders only (To keep price continuity)</li>
+									<li>Execution Price : 10,700 (matched price)</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('c20ad4d76fe97759aa27a0c99bff6710');</script>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,800</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>(Last Traded Price)<br>200</td>
+							<td>10,700</td>
+							<td>200<br>(Deemed Price)</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,400</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,300</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('6512bd43d9caa6e02c990b0a82652dca');
+
+</script>
+			</dd>
+			
+			<dt>Example 2. The bid market order with larger quantity</dt>
+			<dd>
+				<div class="design-table1" id="c51ce410c124a10e0db5e4b97fc2af39">
+
+				<table summary="example 5">
+					<caption>example 5</caption>
+					<colgroup>
+						<col style="width: 20%" span="3">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>100</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td rowspan="7" class="tal">
+								<div class="design-content-list1" id="aab3238922bcc25a6f606eb525ffdc56">
+
+								<ul>
+									<li>Deemed Price : 10,700<br>
+										Ask market order : 10,600 (Last traded price<br>
+										Bid market order : 10,700 (Last Traded Price+1 tick)<br>
+										To reflect market demand</li>
+									<li>Execution Price : 10,700 (The price of a larger quantity order)</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('aab3238922bcc25a6f606eb525ffdc56');</script>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,800</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,700</td>
+							<td>200<br>(Deemed Price)</td>
+						</tr>
+						<tr>
+							<td>(Deemed Price)<br>100</td>
+							<td>10,600</td>
+							<td>Last Traded Price</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,400</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,300</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('c51ce410c124a10e0db5e4b97fc2af39');
+
+</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('d3d9446802a44259755d38e6d163e820');</script>
+	</dd>
+</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+
+
+</body>
+</html>

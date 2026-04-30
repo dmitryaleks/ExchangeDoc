@@ -1,0 +1,156 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+<dl>
+	<dt>Midpoint Order Matching Method</dt>
+	<dd>
+		<p>A midpoint order is designed to execute at mid-price in the KRX regular trading session. It is matched with other midpoint orders, limit orders, or market orders through continuous auction. Execution follows the standard price-time priority: price priority applies first, followed by time priority. 
+			Midpoint orders are not valid during single price auctions or when either the bid or ask price is unavailable.
+			Their validity resumes during continuous auctions once both bid and ask prices are available.
+		</p><br>
+
+		<div class="design-title-list2" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+		<dl>
+			<dt>[Example 1] Matching with Midpoint order</dt>
+			<dd>
+				<div class="design-table1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+				<table summary="">
+					<caption></caption>
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 20%">
+						<col style="width: 20%">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>③100</td>
+							<td>3,515</td>
+							<td></td>
+							<td rowspan="5" class="tal"><1> ④ - ⑤ : 50 shares at 3,502 KRW <br/><2> ① - ⑤ : 100 shares at 3,510 KRW <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(mid-price after execution: 3,512 KRW)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3,512</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>①100</td>
+							<td>3,510</td>
+							<td>⑤200</td>
+						</tr>
+						<tr>
+							<td>④50(midpoint order)</td>
+							<td>3,502(mid-price)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3,495</td>
+							<td>②200</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('a87ff679a2f3e71d9181a67b7542122c');
+
+</script>
+			</dd>
+			
+			<dt>[Example 2] Suspension and Resumption of Midpoint order</dt>
+			<dd>
+				<div class="design-table1" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+				<table summary="">
+					<caption></caption>
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 20%">
+						<col style="width: 20%">
+						<col style="width: 40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Execution Result</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>⑤100</td>
+							<td>3,515</td>
+							<td></td>
+							<td rowspan="5" class="tal"><1> ① - ④ : 100 shares at 3,510 KRW <br/><2> ③Midpoint order suspended(No valid ask quote) <br/><3> After ⑤Limit order, ③Midpoint order reactivated(mid- price 3,512 KRW) </td>
+						</tr>
+						<tr>
+							<td>①100</td>
+							<td>3,510</td>
+							<td>④500</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3,502(mid-price)</td>
+							<td>③50(midpoint order)</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3,495</td>
+							<td>②200</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>3,400</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('e4da3b7fbbce2345d7772b0674a318d5');
+
+</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+	</dd>
+</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+
+
+</body>
+</html>

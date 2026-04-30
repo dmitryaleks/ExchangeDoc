@@ -1,0 +1,7 @@
+# Pinned to current major version per decisions/0001-html-generator.md §10.
+# Patch/minor updates allowed; major bumps require manual review.
+
+mkdocs>=1.6,<2.0
+mkdocs-material>=9.5,<10.0
+pyyaml>=6.0,<7.0
+pymarkdownlnt>=0.9,<1.0

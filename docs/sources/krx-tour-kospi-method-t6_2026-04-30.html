@@ -1,0 +1,445 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+<dl>
+	<dt>Difference in Execution between Limit Orders at Daily Price Limits and Market Orders</dt>
+	<dd>
+		<p>In a case where a limit order is placed at the upper (lower) price limit, there may be an argument that a market order still has the price priority. However, as all orders cannot be quoted beyond the price limits, the market order is deemed as an upper (lower) price limit order.</p><br>
+		<p>With regard to the priority between a market order deemed as an upper (lower) price limit order and a limit order at the upper (lower) price limit, considering that a limit order is not able to have better price due to the price limit, both the buying (selling) limit order at the upper (lower) price limit and the buying (selling) market order are deemed to have the same price priority.</p><br>
+		<p>The difference between a market order and a limit order at price limit depends on the order quantity. That is, if the order quantity of counter-party is larger than that of the market order or the limit order at the upper (lower) price limit, there is not any difference. However, if the counter-party's order quantity is smaller, then the market order is matched at a better price.</p><br>
+		<p>In a continuous trading, difference comes from the existence of a preceding order. That is, if the counter-party's order has the time priority, there is no difference. However, if the counter-party's order arrived later, then the market order is more likely to be matched at a better price. The limit order, however, has the advantage of expecting the price to be matched to a certain extent.</p>
+	</dd>
+	
+	<dt>Difference in Execution between Limit Orders at Price Limits and Market Orders</dt>
+	<dd>
+		<div class="design-title-list2" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+		<dl>
+			<dt>Example of single price auction: Case 1.</dt>
+			<dd>
+				<p>There is no difference because the matched price is the same in case where the counter-party has the same as or larger quantity.</p>
+				<div class="design-table1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+				<table summary="Example of single price auction: Case 1.">
+					<caption>Example of single price auction: Case 1.</caption>
+					<colgroup>
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="3">Market Orders</th>
+							<th scope="colgroup" colspan="3">Orders at Upper Price Limit</th>
+						</tr>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>100</td>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>&nbsp;</td>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td>10,500</td>
+							<td>100<br>(Deemed Price)</td>
+							<td>200</td>
+							<td>10,500</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>100</td>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3">Execution Price : 10,500</td>
+							<td colspan="3">Execution Price: 10,500 (The price of a larger quantity order)</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('a87ff679a2f3e71d9181a67b7542122c');
+
+</script>
+			</dd>
+			
+			<dt>Example of single price auction: Case 2.</dt>
+			<dd>
+				<p>In a case where the counter-party has smaller quantity, the market order is matched at 10,500 while the limit order at price limit, at 11,500, the upper price limit, which makes the market order more advantageous.</p>
+				<div class="design-table1" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+				<table summary="Example of single price auction: Case 2.">
+					<caption>Example of single price auction: Case 2.</caption>
+					<colgroup>
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="3">Market Orders</th>
+							<th scope="colgroup" colspan="3">Orders at Upper Price Limit</th>
+						</tr>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>200</td>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>&nbsp;</td>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>200</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>100</td>
+							<td>10,500</td>
+							<td>200<br>(Deemed Price)</td>
+							<td>100</td>
+							<td>10,500</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>100</td>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3">Execution Price : 10,500</td>
+							<td colspan="3">Execution Price : 11,500 (The price of a larger quantity order)</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('e4da3b7fbbce2345d7772b0674a318d5');
+
+</script>
+			</dd>
+			
+			<dt>Example of multiple price auctions: Case 1.</dt>
+			<dd>
+				<p>In a case where the counter-party order came later, the market order is matched at 10,550, while the limit order at price limit, at 11,500, which proves the market order is more advantageous.</p>
+				<div class="design-table1" id="1679091c5a880faf6fb5e6087eb1b2dc">
+
+				<table summary="Example of multiple price auctions: Case 1.">
+					<caption>Example of multiple price auctions: Case 1.</caption>
+					<colgroup>
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="3">Market Orders</th>
+							<th scope="colgroup" colspan="3">Orders at Upper Price Limit</th>
+						</tr>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>② 100</td>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>&nbsp;</td>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>② 100</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>③ 200</td>
+							<td>10,550</td>
+							<td>100<br>(Deemed Price)</td>
+							<td>③ 200</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>① 200</td>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>① 200</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3">Execution Price : 10,550 (The price of the preceding order)</td>
+							<td colspan="3">Execution Price : 11,500 (The price of the preceding order)</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('1679091c5a880faf6fb5e6087eb1b2dc');
+
+</script>
+			</dd>
+			
+			<dt>Example of multiple price auctions: Case 2.</dt>
+			<dd>
+				<p>In a case where the counter-party order came first, both the market order and the limit order at price limit are matched at the same price, making no difference.</p>
+				<div class="design-table1" id="8f14e45fceea167a5a36dedd4bea2543">
+
+				<table summary="Example of multiple price auctions: Case 2.">
+					<caption>Example of multiple price auctions: Case 2.</caption>
+					<colgroup>
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+						<col style="width: 16%">
+						<col style="width: 17%">
+						<col style="width: 16%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="colgroup" colspan="3">Market Orders</th>
+							<th scope="colgroup" colspan="3">Orders at Upper Price Limit</th>
+						</tr>
+						<tr>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+							<th scope="col">Asks</th>
+							<th scope="col">Price</th>
+							<th scope="col">Bids</th>
+						</tr>
+					</thead>
+					<tbody class="tac">
+						<tr>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>③ 200</td>
+							<td>&nbsp;</td>
+							<td>Market Order</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>&nbsp;</td>
+							<td>Upper Price Limit</td>
+							<td>11,500</td>
+							<td>③ 200</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,600</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>② 100</td>
+							<td>10,550</td>
+							<td>100<br>(Deemed Price)</td>
+							<td>② 100</td>
+							<td>10,550</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>① 100</td>
+							<td>&nbsp;</td>
+							<td>10,500</td>
+							<td>① 100</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10,450</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+							<td>Last Traded Price</td>
+							<td>10,000</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td colspan="3">Execution Price : 10,550 (The price of the preceding order)</td>
+							<td colspan="3">Execution Price : 10,550 (The price of the preceding order)</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('8f14e45fceea167a5a36dedd4bea2543');
+
+</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+	</dd>
+</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+
+
+</body>
+</html>

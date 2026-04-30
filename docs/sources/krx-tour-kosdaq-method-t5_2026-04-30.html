@@ -1,0 +1,289 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Global KRX | </title>
+</head>
+<body>
+
+
+
+
+<div class="design-title-list1" id="c81e728d9d4c2f636f067f89cc14862c">
+
+<dl>
+	<dt>Limit Orders</dt>
+	<dd style="margin-top: 5px;">
+		<div class="design-content-list1" id="eccbc87e4b5ce2fe28308fd9f2a7baf3">
+
+		<ol>
+			<li>Orders which can be executed only trade at a designated price or better.</li>
+			<li>As the investor designates the price condition to be matched, the investor has the advantage that the order is not matched at a price unfavorable than the designated price.</li>
+			<li>However, in case where there is not any counter-party order that corresponds with the designated price, the order should wait until the counter-party order arrives and may not be matched.</li>
+		</ol>
+		
+</div>
+<script>$.listTitle('eccbc87e4b5ce2fe28308fd9f2a7baf3');</script>
+	</dd>
+	
+	<dt>Market Orders</dt>
+	<dd style="margin-top: 5px;">
+		<div class="design-content-list1" id="a87ff679a2f3e71d9181a67b7542122c">
+
+		<ol>
+			<li>Orders which do not have a designated  price to be matched and intend to be matched at the best available price when the order is placed.</li>
+			<li>As the order has flexibility in matching price, the order can be executed speedier.</li>
+			<li>If there are not enough counter-party orders, market orders may result in a sudden fluctuation of the matched prices.</li>
+		</ol>
+		
+</div>
+<script>$.listTitle('a87ff679a2f3e71d9181a67b7542122c');</script>
+	</dd>
+	
+	<dt>Difference between a Limit Orders and a Market Orders</dt>
+	<dd>
+		<div class="design-title-list2" id="e4da3b7fbbce2345d7772b0674a318d5">
+
+		<dl>
+			<dt>Designation of maximum/minimum price</dt>
+			<dd>
+				<div class="design-content-list1" id="1679091c5a880faf6fb5e6087eb1b2dc">
+
+				<ul>
+					<li>Limit orders designate the maximum buying price (minimum selling price) in advance.</li>
+					<li>Market orders do not set any restriction on the matching price.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('1679091c5a880faf6fb5e6087eb1b2dc');</script>
+			</dd>
+			
+			<dt>Immediacy of execution</dt>
+			<dd>
+				<div class="design-content-list1" id="8f14e45fceea167a5a36dedd4bea2543">
+
+				<ul>
+					<li>Limit orders can be matched only when the price condition is met as the order sets a restriction on the matching price.</li>
+					<li>Market orders can be matched any time when there is a counter-party as the order does not set a restriction on the matching price.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('8f14e45fceea167a5a36dedd4bea2543');</script>
+				<div class="design-table1" id="c9f0f895fb98ab9159f51fd0297e236d">
+
+				<table summary="Immediacy of execution">
+					<caption>Immediacy of execution</caption>
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 40%" span="2">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">Classification</th>
+							<th scope="col">Limit Order</th>
+							<th scope="col">Market Order</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Price Priority</th>
+							<td>Lower price priority to the market order. However, in case of daily price limits, the price priority is the same as the market order.</td>
+							<td>Higher price priority than the limit order.<br>
+								However, deemed to have the same priority with the limit order at the price limits.</td>
+						</tr>
+						<tr>
+							<th scope="row">Matching Principle</th>
+							<td>Price and time priorities are applied</td>
+							<td>Same as left</td>
+						</tr>
+						<tr>
+							<th scope="row">Order Book Disclosure</th>
+							<td>At the designated price</td>
+							<td>Disclosed at the price of best limit order ± 1 tick when there is a limit order disclosed at the last traded price when there isn't a limit order</td>
+						</tr>
+						<tr>
+							<th scope="row">Restrictions on Order Placement</th>
+							<td>No restrictions</td>
+							<td>Prohibited in cases of:
+								<div class="design-content-list1" id="45c48cce2e2d7fbdea1afc51c7c6ad26">
+
+								<ul>
+									<li>covered short-selling that has price restrictions,</li>
+									<li>liquidation issues trading, and,</li>
+									<li>determination of the first price of initial listing, relisting and listing changes</li>
+								</ul>
+								
+</div>
+<script>$.listTitle('45c48cce2e2d7fbdea1afc51c7c6ad26');</script>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Corrections</th>
+							<td>Price corrections allowed. Quantity corrections, in part or whole, allowed when converting into a market order</td>
+							<td>Price corrections not allowed.<br>
+								Quantity corrections, in part or whole, allowed when converting into a limit order</td>
+						</tr>
+						<tr>
+							<th scope="row">Cancellations</th>
+							<td>Cancellations, in part or whole, allowed</td>
+							<td>Same as left</td>
+						</tr>
+					</tbody>
+				</table>
+				
+</div>
+<script>
+$.tableFirstChild('c9f0f895fb98ab9159f51fd0297e236d');
+
+</script>
+			</dd>
+		</dl>
+		
+</div>
+<script>$.listTitle('e4da3b7fbbce2345d7772b0674a318d5');</script>
+	</dd>
+	
+	<dt>Immediately Executable Limit Orders</dt>
+	<dd>
+		<p>In case of an ask order, the highest bid price at the time of the order placement. If there is not any bid order, the price which is one tick higher than the lowest ask order (within the scope of the lower price limit). If there is not any bid and ask orders, the last traded price.</p>
+		<p>In case of a bid order, the lowest ask price at the time of the order placement. If there is not any ask order, the price which is one tick lower than the highest bid order (within the scope of the upper price limit). If there is not any bid and ask orders, the last traded price.</p>
+	</dd>
+	
+	<dt>Best Limit Orders</dt>
+	<dd>
+		<div class="design-content-list1" id="d3d9446802a44259755d38e6d163e820">
+
+		<ul>
+			<li>In case of an ask order, the lowest ask price (If there is not any ask orders, the last traded price.)</li>
+			<li>In case of a bid order, the highest bid price (If there is not any bid orders, the last traded price.)<br>
+				<span class="design-note-tin"><span class="hidden-alt">주의</span>The prices of the bid/ask orders mean the best bid/ask at the time of the order placement.</span>
+<br>
+				<span class="design-note-tin"><span class="hidden-alt">주의</span>The last traded price means the price at which the latest transactions are made. If there has not been a transaction for the day, it will be the previous day's closing price (base price).</span>
+
+			</li>
+		</ul>
+		
+</div>
+<script>$.listTitle('d3d9446802a44259755d38e6d163e820');</script>
+	</dd>
+	
+	<dt>Limit-to-Market-on-Close Orders</dt>
+	<dd style="margin-top: 5px;">
+		<div class="design-content-list1" id="6512bd43d9caa6e02c990b0a82652dca">
+
+		<ol>
+			<li>A limit order which has the condition, to convert to a market order at, if not executed until, the quotation receiving hours for the market closing call auction.</li>
+			<li>The converting time to a market order is the beginning time of the market closing call auction. The time priority is as follows:
+				<div class="design-content-list2" id="c20ad4d76fe97759aa27a0c99bff6710">
+
+				<ul>
+					<li>Lower price ask orders and higher price bid orders have priority over higher price ask orders and lower price bid orders, respectively.</li>
+					<li>Orders with same prices are determined in their time priority according to the time they are placed so that the orders received earlier has the priority over the orders received later.</li>
+				</ul>
+				
+</div>
+<script>$.listTitle('c20ad4d76fe97759aa27a0c99bff6710');</script>
+			</li>
+			<li>Limit-to-market-on-close orders are not allowed for the quotations to determine the first price of the initial listing, re-listing, etc., short-selling, and the quotations to determine the closing prices.</li>
+		</ol>
+		
+</div>
+<script>$.listTitle('6512bd43d9caa6e02c990b0a82652dca');</script>
+	</dd>
+	
+	<dt>Conditioned Orders</dt>
+	<dd>
+		<p>In cases of limit orders, market orders, and immediately executable limit orders, following conditions are allowed:</p>
+		<div class="design-content-list1" id="c51ce410c124a10e0db5e4b97fc2af39">
+
+		<ul>
+			<li>Immediate or Cancel (IOC): After the immediate execution at the time of the placement, the remaining quantity, if any, is cancelled.</li>
+			<li>Fill or-Kill (FOK): The order is executed only if the whole quantity can be executed immediately after being placed. If not, the whole order quantity is cancelled immediately.</li>
+		</ul>
+		
+</div>
+<script>$.listTitle('c51ce410c124a10e0db5e4b97fc2af39');</script>
+	</dd>
+	
+	<dt>Available Types of Orders and Conditions by Sessions</dt>
+	<dd>
+		<div class="design-table1" id="aab3238922bcc25a6f606eb525ffdc56">
+
+		<table summary="">
+			<caption></caption>
+			<colgroup>
+				<col style="width: 26%">
+				<col style="width: 12%" span="4">
+				<col style="width: 26%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">Order Type</th>
+					<th scope="col">08:30~09:00</th>
+					<th scope="col">09:00~15:20</th>
+					<th scope="col">15:20~15:30</th>
+					<th scope="col">IOC/FOK</th>
+					<th scope="col">Remark</th>
+				</tr>
+			</thead>
+			<tbody class="tac">
+				<tr>
+					<th scope="row">Limit Orders</th>
+					<td>O</td>
+					<td>O</td>
+					<td>O</td>
+					<td>O</td>
+					<td rowspan="4">IOC/FOK is allowed during continuous trading only.</td>
+				</tr>
+				<tr>
+					<th scope="row">Market Orders</th>
+					<td>O</td>
+					<td>O</td>
+					<td>O</td>
+					<td>O</td>
+				</tr>
+				<tr>
+					<th scope="row">Limit-to-Market-on-Close Orders</th>
+					<td>O</td>
+					<td>O</td>
+					<td>X</td>
+					<td>X</td>
+				</tr>
+				<tr>
+					<th scope="row">Immediately Executable Limit Orders</th>
+					<td>X</td>
+					<td>O</td>
+					<td>X</td>
+					<td>O</td>
+				</tr>
+				<tr>
+					<th scope="row">Best Limit Orders</th>
+					<td>X</td>
+					<td>O</td>
+					<td>X</td>
+					<td>X</td>
+					<td>IOC/FOK is not allowed.</td>
+				</tr>
+			</tbody>
+		</table>
+		
+</div>
+<script>
+$.tableFirstChild('aab3238922bcc25a6f606eb525ffdc56');
+
+</script>
+	</dd>
+</dl>
+
+</div>
+<script>$.listTitle('c81e728d9d4c2f636f067f89cc14862c');</script>
+
+
+
+
+</body>
+</html>
