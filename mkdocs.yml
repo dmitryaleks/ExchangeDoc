@@ -1,0 +1,84 @@
+# =============================================================================
+# MkDocs configuration — Exchange Analysis docs (Phase 5.1 scaffold).
+#
+# Hand-maintained EXCEPT for the block between the BEGIN/END GENERATED NAV
+# sentinels below, which is rewritten by `python tools/gen_nav.py` from
+# `docs/index.yaml`. See decisions/0001-html-generator.md §10.
+#
+# Subsequent phases will extend this file:
+#   - 5.2: pastel palettes via docs/_extra.css + extra_css
+#   - 5.5: mkdocs_hooks.py for per-page market badge / last_reviewed / sources
+# =============================================================================
+
+site_name: KR Exchange Analysis
+site_description: KOSPI & KOSDAQ microstructure documentation
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Author-facing files that are not part of the published site.
+exclude_docs: |
+  STYLE.md
+  **/README.md
+  index.yaml
+  sources/sources.yaml
+
+# Files kept in the build (resolvable via internal links) but absent from
+# the sidebar nav. INVENTORY.md is referenced by per-page `sources:` entries.
+not_in_nav: |
+  sources/INVENTORY.md
+  sources/krx-*.html
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+# === BEGIN GENERATED NAV ===
+nav:
+- Sessions & Auctions:
+  - Market hours (KOSPI): kospi/market_hours.md
+  - Auctions (KOSPI): kospi/auctions.md
+- Prices & Orders:
+  - Price ranges & tick sizes (KOSPI): kospi/price_ranges.md
+  - Order types (KOSPI): kospi/order_types.md
+  - Trading rules & matching (KOSPI): kospi/trading_rules.md
+# === END GENERATED NAV ===

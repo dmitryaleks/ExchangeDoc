@@ -22,3 +22,6 @@ Thumbs.db
 
 # Claude Code local
 .claude/settings.local.json
+
+# MkDocs build output
+site/
