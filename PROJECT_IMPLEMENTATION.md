@@ -115,7 +115,7 @@ Topic tasks (KOSPI):
 - 2.1 `market_hours.md` — regular session, pre/post sessions, holidays, half-days — status: [x] *(template-validation pass; cites BR §4/5/10/33 + Enforcement Rule §8/11; lint clean. Pymarkdown config added at `.pymarkdown.json` to allow frontmatter and disable hard line-length cap.)*
 - 2.2 `auctions.md` — opening, closing, and any intraday call auctions; matching rules; random-end mechanics — status: [x] *(222 lines; cites BR §22/23/24/37 + Enforcement Rule §34/35/67-2; covers single-price vs continuous, 5 single-price events, random-end, 동시호가 quantity-allocation, A-Blox; 3 worked examples including the KRW 20,150 upper-limit allocation; 5 edge cases / open questions flagged; lint clean)*
 - 2.3 `price_ranges.md` — daily price limits, base price determination, tick sizes by price band — status: [x] *(236 lines; cites BR §20/21/22.2.1/37.1 + Enforcement Rule §30/31/32/33; covers ±30 % default band, leveraged ETF/ETN scaling, day-1 +300 %/-60 % newly-listed band, liquidation-issue carve-out, 7-band tick schedule, 1-share / 10-cert ELW lot exception, base-price special cases (split, ex-div, opening-price-base method, transfers from KOSDAQ); 3 worked examples including limit-at-limit vs market-order priority equivalence with execution-price divergence; 6 edge cases / open questions flagged; lint clean)*
-- 2.4 `order_types.md` — limit, market, conditional, IOC/FOK, MOO/MOC, and any KRX-specific types; per-session eligibility — status: [ ]
+- 2.4 `order_types.md` — limit, market, conditional, IOC/FOK, MOO/MOC, and any KRX-specific types; per-session eligibility — status: [x] *(253 lines; cites BR §2/§9-13/§22/§108 + Enforcement Rule §3/§4/§4-2/§4-3/§10/§13/§13-2/§14/§15/§15-2; covers all 8 quotation types (limit, market, conditional, best-counterparty, best-same, competitive-block, midpoint, stop-limit), eligibility-by-security and eligibility-by-session matrices, conditional-limit conversion at 15:20, stop-limit activation rules + post-activation time-priority retention, IOC/FOK/self-match-prevention conditions, midpoint suspension rules, 기세 special-quotation exclusions; 3 worked examples (best-counter vs best-same on same book, conditional-limit conversion priority, stop-limit time-priority advantage); 6 edge cases / open questions; lint clean)*
 - 2.5 `trading_rules.md` — order priority, matching algorithm, self-match prevention, lot sizes — status: [ ]
 - 2.6 `volatility_interruption.md` — static VI, dynamic VI, trigger thresholds, cool-off duration, resumption auction — status: [ ]
 - 2.7 `circuit_breakers.md` — index-level CB tiers, trigger conditions, halt durations, side-wide vs symbol — status: [ ]
@@ -267,7 +267,7 @@ Quick overview to scan without reading the whole file. Mirror status updates her
 ```
 Phase 0 — setup                    [x] [x] [x] [x] [x]
 Phase 1 — sources                  [x] [~] [ ] [~] [~]
-Phase 2 — KOSPI topics             [x] [x] [x] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+Phase 2 — KOSPI topics             [x] [x] [x] [x] [ ] [ ] [ ] [ ] [ ] [ ]
 Phase 3 — KOSDAQ topics            [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
 Phase 4 — comparison               [ ] [ ] [ ]
 Phase 5 — HTML site                [ ] [ ] [ ] [ ] [ ] [ ] [ ]
