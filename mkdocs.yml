@@ -27,13 +27,17 @@ theme:
     - content.code.copy
     - toc.follow
   palette:
+    # Pastel overrides are layered on top of Material's built-in schemes so the
+    # dark-mode typography rules (text/links/tables) apply correctly. The custom
+    # palette colors are in docs/_extra.css under the [data-md-color-scheme]
+    # selectors that mirror these scheme names.
     - media: "(prefers-color-scheme: light)"
-      scheme: pastel-light
+      scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: pastel-dark
+      scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to light mode

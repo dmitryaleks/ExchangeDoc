@@ -1,9 +1,10 @@
 /* =============================================================================
  * Pastel theme overrides for Exchange Analysis docs (Phase 5.2).
  *
- * Two palettes are exposed via Material's data-md-color-scheme attribute:
- *   - pastel-light  (default, soft warm whites)
- *   - pastel-dark   (deep desaturated teal/lavender for low-light reading)
+ * Layered on top of Material's built-in schemes so the dark-mode typography
+ * (body text, links, tables, code) inherits Material's slate-mode rules:
+ *   - [data-md-color-scheme="default"] = light mode (soft warm whites)
+ *   - [data-md-color-scheme="slate"]   = dark mode (deep desaturated teal/lavender)
  *
  * Colors are pinned to CSS custom properties so they apply uniformly to
  * primary, accent, code, table, admonition, and link surfaces. We override
@@ -11,9 +12,9 @@
  * theme machinery is unchanged.
  * ============================================================================= */
 
-/* ---------- pastel-light (default) ---------- */
+/* ---------- light mode (Material's default scheme + pastel overrides) ---------- */
 
-[data-md-color-scheme="pastel-light"] {
+[data-md-color-scheme="default"] {
   /* Surfaces */
   --md-default-bg-color:        hsl(35, 25%, 98%);   /* warm cream */
   --md-default-bg-color--light: hsl(35, 25%, 96%);
@@ -59,9 +60,9 @@
   --md-footer-fg-color--lighter: hsl(35, 25%, 65%);
 }
 
-/* ---------- pastel-dark ---------- */
+/* ---------- dark mode (Material's slate scheme + pastel overrides) ---------- */
 
-[data-md-color-scheme="pastel-dark"] {
+[data-md-color-scheme="slate"] {
   /* Surfaces — deep cool slate, not pure black */
   --md-default-bg-color:        hsl(220, 22%, 12%);
   --md-default-bg-color--light: hsl(220, 20%, 16%);
@@ -137,7 +138,7 @@
   background: hsl(210, 35%, 90%);
   color: hsl(210, 50%, 30%);
 }
-[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.kospi {
+[data-md-color-scheme="slate"] .page-meta .market-badge.kospi {
   background: hsl(210, 30%, 25%);
   color: hsl(210, 35%, 75%);
 }
@@ -146,7 +147,7 @@
   background: hsl(145, 30%, 88%);
   color: hsl(145, 50%, 28%);
 }
-[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.kosdaq {
+[data-md-color-scheme="slate"] .page-meta .market-badge.kosdaq {
   background: hsl(145, 30%, 22%);
   color: hsl(145, 30%, 75%);
 }
@@ -155,7 +156,7 @@
   background: hsl(280, 30%, 90%);
   color: hsl(280, 45%, 32%);
 }
-[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.both {
+[data-md-color-scheme="slate"] .page-meta .market-badge.both {
   background: hsl(280, 30%, 22%);
   color: hsl(280, 35%, 78%);
 }
