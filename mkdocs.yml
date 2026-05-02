@@ -28,15 +28,21 @@ theme:
     - toc.follow
   palette:
     - media: "(prefers-color-scheme: light)"
-      scheme: default
+      scheme: pastel-light
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+      scheme: pastel-dark
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+extra_css:
+  - _extra.css
+
+hooks:
+  - mkdocs_hooks.py
 
 plugins:
   - search
@@ -74,11 +80,32 @@ validation:
 
 # === BEGIN GENERATED NAV ===
 nav:
+- Overview:
+  - Introduction: common/introduction.md
+  - KOSPI vs KOSDAQ — comparison: common/comparison.md
 - Sessions & Auctions:
   - Market hours (KOSPI): kospi/market_hours.md
+  - Market hours (KOSDAQ): kosdaq/market_hours.md
   - Auctions (KOSPI): kospi/auctions.md
+  - Auctions (KOSDAQ): kosdaq/auctions.md
 - Prices & Orders:
   - Price ranges & tick sizes (KOSPI): kospi/price_ranges.md
+  - Price ranges & tick sizes (KOSDAQ): kosdaq/price_ranges.md
   - Order types (KOSPI): kospi/order_types.md
+  - Order types (KOSDAQ): kosdaq/order_types.md
   - Trading rules & matching (KOSPI): kospi/trading_rules.md
+  - Trading rules & matching (KOSDAQ): kosdaq/trading_rules.md
+  - Order amendments (KOSPI): kospi/amendments.md
+  - Order amendments (KOSDAQ): kosdaq/amendments.md
+- Volatility Safeguards:
+  - Volatility Interruption (KOSPI): kospi/volatility_interruption.md
+  - Volatility Interruption (KOSDAQ): kosdaq/volatility_interruption.md
+  - Circuit Breakers (KOSPI): kospi/circuit_breakers.md
+  - Circuit Breakers (KOSDAQ): kosdaq/circuit_breakers.md
+- Short Selling:
+  - Short selling rules (KOSPI): kospi/short_selling.md
+  - Short selling rules (KOSDAQ): kosdaq/short_selling.md
+- Other Topics:
+  - Other topics (KOSPI): kospi/other_topics.md
+  - Other topics (KOSDAQ): kosdaq/other_topics.md
 # === END GENERATED NAV ===

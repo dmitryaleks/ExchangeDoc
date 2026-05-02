@@ -235,7 +235,7 @@ The Korean original is the authoritative quote; the English line is marked
 - Link between topic files with relative Markdown links:
   `[Auctions (KOSPI)](../kospi/auctions.md)`.
 - Anchor links use the auto-generated slug from the H2 heading:
-  `[see Parameters & thresholds](#parameters--thresholds)`.
+  `[see Parameters & thresholds](#parameters-thresholds)`.
 - Always link the KOSPI ↔ KOSDAQ counterparts at the top of "Detailed rules"
   (or in a single line right after the Summary):
 

@@ -83,7 +83,7 @@ When §22.3 applies, the Enforcement Rule §34 sets a three-pass quantity-priori
 2. **Second pass** — to each eligible order with remaining unfilled balance: **half** of that remaining balance, rounded to the trading-lot grain.
 3. **Third pass** — the residual quantity flows to the same priority sequence (largest order first) until the matched quantity is exhausted.
 
-The fully worked example with KRW 20,150 upper-limit allocation is in [Auctions § Example B — quantity allocation at the upper price limit](./auctions.md#example-b--quantity-allocation-at-the-upper-price-limit).
+The fully worked example with KRW 20,150 upper-limit allocation is in [Auctions § Example B — quantity allocation at the upper price limit](./auctions.md#example-b-quantity-allocation-at-the-upper-price-limit).
 
 ### Matching algorithms — single-price and continuous
 

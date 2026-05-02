@@ -1,0 +1,189 @@
+/* =============================================================================
+ * Pastel theme overrides for Exchange Analysis docs (Phase 5.2).
+ *
+ * Two palettes are exposed via Material's data-md-color-scheme attribute:
+ *   - pastel-light  (default, soft warm whites)
+ *   - pastel-dark   (deep desaturated teal/lavender for low-light reading)
+ *
+ * Colors are pinned to CSS custom properties so they apply uniformly to
+ * primary, accent, code, table, admonition, and link surfaces. We override
+ * only the variables that Material reads at render time; the rest of the
+ * theme machinery is unchanged.
+ * ============================================================================= */
+
+/* ---------- pastel-light (default) ---------- */
+
+[data-md-color-scheme="pastel-light"] {
+  /* Surfaces */
+  --md-default-bg-color:        hsl(35, 25%, 98%);   /* warm cream */
+  --md-default-bg-color--light: hsl(35, 25%, 96%);
+  --md-default-bg-color--lighter: hsl(35, 25%, 99%);
+  --md-default-bg-color--lightest: hsl(0, 0%, 100%);
+
+  /* Foreground */
+  --md-default-fg-color:         hsl(220, 18%, 22%);
+  --md-default-fg-color--light:  hsl(220, 14%, 35%);
+  --md-default-fg-color--lighter: hsl(220, 12%, 50%);
+  --md-default-fg-color--lightest: hsl(220, 10%, 70%);
+
+  /* Brand surfaces — muted dusty blue */
+  --md-primary-fg-color:        hsl(210, 35%, 55%);
+  --md-primary-fg-color--light: hsl(210, 35%, 65%);
+  --md-primary-fg-color--dark:  hsl(210, 35%, 45%);
+  --md-primary-bg-color:        hsl(35, 25%, 99%);
+  --md-primary-bg-color--light: hsl(35, 25%, 95%);
+
+  /* Accent — soft rose */
+  --md-accent-fg-color:         hsl(345, 55%, 58%);
+  --md-accent-fg-color--transparent: hsla(345, 55%, 58%, 0.1);
+  --md-accent-bg-color:         hsl(35, 25%, 99%);
+  --md-accent-bg-color--light:  hsl(35, 25%, 95%);
+
+  /* Code — pale lavender background */
+  --md-code-bg-color:           hsl(260, 30%, 96%);
+  --md-code-fg-color:           hsl(260, 25%, 28%);
+  --md-code-hl-color:           hsla(50, 80%, 85%, 0.5);
+
+  /* Tables */
+  --md-typeset-table-color:     hsl(220, 14%, 88%);
+
+  /* Admonition tints */
+  --md-admonition-bg-color:     hsl(35, 25%, 97%);
+  --md-admonition-fg-color:     var(--md-default-fg-color);
+
+  /* Footer + header */
+  --md-footer-bg-color:         hsl(220, 20%, 22%);
+  --md-footer-bg-color--dark:   hsl(220, 22%, 16%);
+  --md-footer-fg-color:         hsl(35, 25%, 95%);
+  --md-footer-fg-color--light:  hsl(35, 25%, 80%);
+  --md-footer-fg-color--lighter: hsl(35, 25%, 65%);
+}
+
+/* ---------- pastel-dark ---------- */
+
+[data-md-color-scheme="pastel-dark"] {
+  /* Surfaces — deep cool slate, not pure black */
+  --md-default-bg-color:        hsl(220, 22%, 12%);
+  --md-default-bg-color--light: hsl(220, 20%, 16%);
+  --md-default-bg-color--lighter: hsl(220, 18%, 20%);
+  --md-default-bg-color--lightest: hsl(220, 16%, 24%);
+
+  /* Foreground — muted cream */
+  --md-default-fg-color:         hsl(35, 18%, 88%);
+  --md-default-fg-color--light:  hsl(35, 14%, 75%);
+  --md-default-fg-color--lighter: hsl(35, 10%, 60%);
+  --md-default-fg-color--lightest: hsl(35, 8%, 40%);
+
+  /* Brand — desaturated teal */
+  --md-primary-fg-color:        hsl(180, 30%, 55%);
+  --md-primary-fg-color--light: hsl(180, 30%, 65%);
+  --md-primary-fg-color--dark:  hsl(180, 30%, 40%);
+  --md-primary-bg-color:        hsl(220, 22%, 14%);
+  --md-primary-bg-color--light: hsl(220, 22%, 18%);
+
+  /* Accent — soft lavender */
+  --md-accent-fg-color:         hsl(280, 45%, 70%);
+  --md-accent-fg-color--transparent: hsla(280, 45%, 70%, 0.15);
+  --md-accent-bg-color:         hsl(220, 22%, 14%);
+  --md-accent-bg-color--light:  hsl(220, 22%, 18%);
+
+  /* Code */
+  --md-code-bg-color:           hsl(220, 22%, 18%);
+  --md-code-fg-color:           hsl(35, 14%, 85%);
+  --md-code-hl-color:           hsla(50, 60%, 35%, 0.4);
+
+  /* Tables */
+  --md-typeset-table-color:     hsl(220, 16%, 28%);
+
+  /* Admonition */
+  --md-admonition-bg-color:     hsl(220, 20%, 16%);
+  --md-admonition-fg-color:     var(--md-default-fg-color);
+
+  /* Footer */
+  --md-footer-bg-color:         hsl(220, 28%, 8%);
+  --md-footer-bg-color--dark:   hsl(220, 30%, 6%);
+  --md-footer-fg-color:         hsl(35, 18%, 85%);
+  --md-footer-fg-color--light:  hsl(35, 14%, 70%);
+  --md-footer-fg-color--lighter: hsl(35, 10%, 55%);
+}
+
+/* ---------- per-page metadata banner (Phase 5.5) ----------
+ * The hook in mkdocs_hooks.py prepends a <div class="page-meta"> block to
+ * each topic page. This styling makes the badge row distinct from the body. */
+
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em 1em;
+  padding: 0.5em 0.8em;
+  margin: 0 0 1.4em 0;
+  border-left: 3px solid var(--md-primary-fg-color);
+  background: var(--md-default-bg-color--light);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85em;
+}
+
+.page-meta .market-badge {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+
+.page-meta .market-badge.kospi {
+  background: hsl(210, 35%, 90%);
+  color: hsl(210, 50%, 30%);
+}
+[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.kospi {
+  background: hsl(210, 30%, 25%);
+  color: hsl(210, 35%, 75%);
+}
+
+.page-meta .market-badge.kosdaq {
+  background: hsl(145, 30%, 88%);
+  color: hsl(145, 50%, 28%);
+}
+[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.kosdaq {
+  background: hsl(145, 30%, 22%);
+  color: hsl(145, 30%, 75%);
+}
+
+.page-meta .market-badge.both {
+  background: hsl(280, 30%, 90%);
+  color: hsl(280, 45%, 32%);
+}
+[data-md-color-scheme="pastel-dark"] .page-meta .market-badge.both {
+  background: hsl(280, 30%, 22%);
+  color: hsl(280, 35%, 78%);
+}
+
+.page-meta .last-reviewed {
+  color: var(--md-default-fg-color--light);
+}
+
+.page-meta .last-reviewed .label {
+  color: var(--md-default-fg-color--lighter);
+  margin-right: 0.3em;
+}
+
+.page-meta .sources {
+  color: var(--md-default-fg-color--light);
+  flex: 1 1 100%;
+  font-size: 0.95em;
+}
+
+.page-meta .sources .label {
+  color: var(--md-default-fg-color--lighter);
+  margin-right: 0.4em;
+}
+
+.page-meta .sources code {
+  font-size: 0.85em;
+  padding: 0 0.4em;
+  background: var(--md-code-bg-color);
+  color: var(--md-code-fg-color);
+  border-radius: 3px;
+}
