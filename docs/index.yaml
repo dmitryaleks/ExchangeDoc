@@ -52,7 +52,7 @@ sections:
     title: Overview
     entries:
       - title: Introduction
-        file: common/introduction.md
+        file: index.md
         markets: [KOSPI, KOSDAQ]
         tags: [overview, intro]
         last_reviewed: null

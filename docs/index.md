@@ -7,7 +7,7 @@ sources: []
 
 # Introduction
 
-This site is a reference for the **microstructure of the KOSPI and KOSDAQ equity markets** operated by the Korea Exchange (KRX) — sufficient to inform execution-algorithm design and pre-trade compliance. It is organized by topic, with one chain of pages per market, plus a [cross-market comparison](./comparison.md) for quick lookup.
+This site is a reference for the **microstructure of the KOSPI and KOSDAQ equity markets** operated by the Korea Exchange (KRX) — sufficient to inform execution-algorithm design and pre-trade compliance. It is organized by topic, with one chain of pages per market, plus a [cross-market comparison](common/comparison.md) for quick lookup.
 
 ## Scope
 
@@ -26,8 +26,8 @@ When a topic page references derivatives (e.g. sidecar, CB-linked-derivatives ha
 
 ## Reading paths
 
-- **Cross-market diff first.** If you have already read the topic on one market and want to know how the other market diverges, jump to [Comparison](./comparison.md).
-- **Algo-design checklist.** [Comparison § Top-level — what is materially different](./comparison.md#0-top-level-what-is-materially-different) is a 17-row punch list of all the parameter-level divergences between the two markets that an execution algo must encode separately.
+- **Cross-market diff first.** If you have already read the topic on one market and want to know how the other market diverges, jump to [Comparison](common/comparison.md).
+- **Algo-design checklist.** [Comparison § Top-level — what is materially different](common/comparison.md#0-top-level-what-is-materially-different) is a 17-row punch list of all the parameter-level divergences between the two markets that an execution algo must encode separately.
 - **Topic chains.** Each market has 10 topic pages: market hours, auctions, price ranges, order types, trading rules, amendments, volatility interruption, circuit breakers, short selling, and other topics. Use the sidebar to navigate.
 
 ## Authoritative sources
@@ -40,7 +40,7 @@ The KOSDAQ Enforcement Rule was not located on the KRX Legal Portal during the s
 
 - Korean terms appear with their original Hangul plus *romanization* and an English gloss on first use within a page; subsequent uses drop the romanization.
 - All times are in Korea Standard Time (KST, UTC+9) unless otherwise stated.
-- Citations use bracketed source IDs from [`docs/sources/INVENTORY.md`](../sources/INVENTORY.md), e.g. `[KRX-RULE-KOSPI-BR-KO §22]`.
+- Citations use bracketed source IDs from [`docs/sources/INVENTORY.md`](sources/INVENTORY.md), e.g. `[KRX-RULE-KOSPI-BR-KO §22]`.
 - The *Edge cases & open questions* section at the end of each topic page records ambiguities, pending verifications, and historical-only claims that should not be relied upon for current-day execution.
 
 ## Reading the per-page header
@@ -52,4 +52,4 @@ Each topic page carries a YAML frontmatter block:
 - `last_reviewed` — ISO date of the most recent freshness pass on this page.
 - `sources` — source-inventory IDs cited on the page.
 
-Phase 5.5 of the project plan adds a rendered metadata banner at the top of each page surfacing this frontmatter as a market badge, last-reviewed date, and clickable source-inventory links. Until that lands, the frontmatter is the canonical metadata reference.
+A rendered metadata banner at the top of each topic page surfaces this frontmatter as a market badge, last-reviewed date, and source-inventory IDs as inline `<code>` chips.

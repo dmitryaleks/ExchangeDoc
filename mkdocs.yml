@@ -85,7 +85,7 @@ validation:
 # === BEGIN GENERATED NAV ===
 nav:
 - Overview:
-  - Introduction: common/introduction.md
+  - Introduction: index.md
   - KOSPI vs KOSDAQ — comparison: common/comparison.md
 - Sessions & Auctions:
   - Market hours (KOSPI): kospi/market_hours.md
